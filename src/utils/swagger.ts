@@ -14,7 +14,7 @@ const options: swaggerJsdoc.Options = {
         },
         servers: [
             {
-                url: `${APP_URL}/api`,
+                url: `${APP_URL}/`,
                 description: 'API Server',
             },
         ],

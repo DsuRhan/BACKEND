@@ -25,11 +25,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Routes
-app.get('/', (req, res) => {
-  res.redirect('/api-docs')
-  const waktu = Date.now()
-  res.json({ message: `Halo pemilik API Key: ${req}! Hari 5 – MVC E-Commerce + Service`, waktu_proses: `${waktu}ms` });
+app.get('/', (_req, res) => {
+  return res.redirect('/api-docs');
 });
+
 
 app.use('/api', productRoutes);
 app.use('/api', categoryRoutes);
