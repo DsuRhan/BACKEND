@@ -1,5 +1,4 @@
 import swaggerJsdoc from 'swagger-jsdoc';
-import { APP_URL } from './env';
 
 const options: swaggerJsdoc.Options = {
     definition: {
@@ -14,8 +13,8 @@ const options: swaggerJsdoc.Options = {
         },
         servers: [
             {
-                url: `${APP_URL}/`,
-                description: 'API Server',
+                url: `/api`,
+                description: 'Relative API Server',
             },
         ],
         components: {
