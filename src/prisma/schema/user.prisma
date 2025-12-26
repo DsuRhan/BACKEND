@@ -1,0 +1,21 @@
+//src/prisma/schema/user.prisma
+model User {
+  id           String       @id @default(uuid()) @db.Uuid
+  username     String       @unique
+  email        String       @unique
+  password     String
+  role         String       @default("USER")
+
+  // === RELASI PROFILE (1 : 1) ===
+  profile      Profile?
+
+  // === RELASI STORE ===
+  stores       Store[]
+  transactions Transaction[]
+
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  deletedAt    DateTime?    @db.Timestamptz
+
+  @@map("users")
+}
